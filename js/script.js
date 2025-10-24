@@ -70,29 +70,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Portfolio Filter
-const filterButtons = document.querySelectorAll('.filter-btn');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        button.classList.add('active');
-        
-        const filterValue = button.getAttribute('data-filter');
-        
-        portfolioItems.forEach(item => {
-            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                item.style.display = 'block';
-                item.style.animation = 'fadeIn 0.5s ease-in-out';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    });
-});
 
 // Testimonials Slider
 let currentTestimonial = 0;
@@ -178,10 +155,16 @@ if (contactForm) {
         submitBtn.disabled = true;
         
         setTimeout(() => {
-            alert('Thank you for your message! We\'ll get back to you soon.');
+            submitBtn.textContent = 'Sent! We\'ll get back to you shortly.';
+            submitBtn.style.background = '#28a745';
             contactForm.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
+            
+            // Reset button after 4 seconds
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+            }, 4000);
         }, 2000);
     });
 }
@@ -247,13 +230,36 @@ revealElements.forEach(element => {
     const projectData = {
         'nars-video-shoot': {
             title: 'NARS Video Shoot',
-            description: 'Professional beauty brand video production for NARS cosmetics. Created compelling video content showcasing the brand\'s foundation range with diverse skin tones, featuring popular Middle Eastern beauty influencer @Hindash.',
-            type: 'Video Production',
+            description: `The Challenge
+
+NARS is one of the most recognized makeup brands in the Middle East. The brand faced a unique challenge: the need to produce localized content that resonates with regional audiences, while adhering to extremely strict global guidelines that allow no creative deviation.
+
+Every market's content had to maintain global consistency in tone, look, and quality. Despite this, the Middle Eastern market required a more relatable and diverse approach to connect with its multicultural audience.
+
+The Solution
+
+We accepted the challenge of creating regional content that fully met NARS Global's standards without compromising quality or brand integrity. The content remained subject to global approval and could be rejected if it did not meet their expectations.
+
+To ensure authenticity and relevance, we collaborated with @Hindash, one of the most prominent beauty influencers and makeup artists in the Middle East. The campaign focused on three key skin tones—light, medium, and dark—to highlight the 33 foundation shades offered by NARS, celebrating the region's rich diversity, especially in Dubai.
+
+We mirrored the global visual style closely, using the same music and lighting approach. The creative focused on application techniques, shade selection, product benefits, and makeup results. Smooth transitions and elegant motion reinforced the brand's premium aesthetic, while Hindash served as the face of the campaign to anchor local credibility.
+
+The Execution
+
+Despite a limited budget, the campaign was entirely produced by our in-house team. The project was led and directed by myself as Senior Art Director, from concept development and storyboard creation to on-set direction and post-production supervision.
+
+The team included:
+• An Account Manager managing NARS' coordination and approvals
+• A Social Media Strategist overseeing content adaptation
+• An in-house Videographer and Editor handling production and editing
+• An in-house Photographer capturing stills for cross-platform use
+
+The final assets aligned perfectly with NARS' global quality benchmarks while authentically representing the Middle Eastern audience, achieving the delicate balance between local relevance and global consistency.`,
             client: 'NARS',
-            category: 'Video',
             behanceUrl: 'https://www.behance.net/gallery/116455095/NARS-Video-shoot',
             images: [
-                'assets/nars-video-shoot.webp'
+                'assets/NARS-Video-Shoot/3i6KmsZkJ5V_576.webm',
+                'assets/NARS-Video-Shoot/PqiYLDuIdE6_576.webm'
             ]
         },
         'wella-social-content': {
@@ -273,9 +279,7 @@ We created styled product content that highlighted the brand's bold color range,
 Wella Permanent Hair Color and Results (Koleston and Soft Color)
 
 To keep the content natural and accessible, we invited team members to model for the shoot. They arrived with their hair styled naturally, helping us create organic, realistic visuals that featured Wella's most loved products while staying true to the brand's identity.`,
-            type: 'Social Media',
             client: 'Wella',
-            category: 'Social Media',
             behanceUrl: 'https://www.behance.net/gallery/168175917/Wella-Social-media-content',
             images: [
                 'assets/Wella-Social-Media-Content/wella_social_media_content_hero.webp',
@@ -305,21 +309,106 @@ To keep the content natural and accessible, we invited team members to model for
         },
         'durex-thrill-firsts': {
             title: 'Durex: The Thrill of Firsts',
-            description: 'Bold and innovative campaign design for Durex featuring creative visual storytelling. Developed compelling campaign materials that push boundaries while maintaining brand integrity and messaging.',
-            type: 'Campaign Design',
+            description: `The Challenge
+
+Durex South America wanted to create a campaign that spoke directly to a younger audience aged 18 to 25. After several unsuccessful attempts, the project was reassigned to a younger team at Havas Middle East, better suited to understand this generation's mindset, culture, and desires. The project was led by myself as Art Director and my partner Yasmina as Copywriter.
+
+Our challenge was to create a concept that connected authentically with youth who are constantly exposed to sexuality through media, music, and social platforms, while staying true to Durex's role as a brand that promotes safe and responsible exploration.
+
+The Idea
+
+We developed the concept "The Thrill of Firsts" inspired by the excitement and uniqueness of every first experience. The idea encouraged young people to embrace new adventures while reminding them that the only thing to think about before their next first is protection.
+
+Our message was clear: Durex supports and empowers this unstoppable generation by being there for them, not to restrict them. Every first time can be thrilling, as long as it begins safely.
+
+The creative platform built on the question "What's your #NextFirst?", opening endless possibilities for self-expression, curiosity, and discovery.
+
+The Manifesto
+
+We produced a manifesto film that spoke directly from the point of view of this generation. The tone was natural, relatable, and empowering, reflecting Durex's supportive role. The film closed with our call to action:
+"Dare. Discover. Explore. But first, Durex."
+
+Because of budget limitations, we combined stock footage with scenes we shot during a one-day production to create a raw, authentic energy. Multiple voiceovers, both male and female with diverse accents, made the content inclusive and genuine.
+
+Quickies
+
+To expand the campaign, we created short videos called "Quickies." Each one depicted a different first-time scenario, showing the thrill of new experiences while reinforcing the message of protection.
+Examples included:
+• First time in the shower
+• First time in the car
+• First time in the library (a more conservative version for selective markets)
+
+We cast three real couples based on chemistry, authenticity, and natural connection. The goal was to capture moments that felt daring, sexy, yet genuine.
+
+We also produced rough mockups ourselves, shooting scenes on mobile phones and editing them with movie and music-video clips to visualize the tone and direction for the client.
+
+All final videos used exclusive music inspired by Massive Attack, composed specifically to evoke excitement and sensuality. Each video ended with the animated Durex logo appearing on the condom pack, visually linking the brand to protection and empowerment.
+
+The Execution
+
+The videos were distributed across social media, inviting the audience to share their own ideas for new "firsts" using the hashtag #NextFirst. The campaign positioned Durex as an ally in sexual confidence and safety, normalizing the idea of both men and women carrying condoms as part of their daily essentials.
+
+Visuals
+
+We designed simple but provocative visuals that focused on the product, paired with textures and backdrops hinting at potential first-time scenarios. These assets were used in-store and on social media as teasers with the question:
+"What's your #NextFirst?"
+All visuals directed users to the campaign website.
+
+Website
+
+We created an interactive landing page for both desktop and mobile, combining education and playfulness. The site featured:
+• The main manifesto video
+• An interactive section where users could share and like ideas for new firsts
+• A collaboration with a popular influencer discussing sexual wellness, confidence, and the importance of being prepared
+
+The result was a digital experience that inspired curiosity, encouraged conversation, and reinforced Durex's message of safety, confidence, and empowerment.`,
             client: 'Durex',
-            category: 'Campaigns',
             behanceUrl: 'https://www.behance.net/gallery/115659431/Durex-The-Thrill-Of-Firsts',
             images: [
-                'assets/durex-thrill-firsts.webp'
+                'assets/Durex-Thrill-Firsts/40b9e4115659431.60551bb285bc9.webp',
+                'assets/Durex-Thrill-Firsts/4c2f6d115659431.60551bb2852e3.webp',
+                'assets/Durex-Thrill-Firsts/8207b6115659431.605281b40c3dd.webp',
+                'assets/Durex-Thrill-Firsts/a21730115659431.605281b409b63.webp',
+                'assets/Durex-Thrill-Firsts/a4d0ed115659431.60551bb286bac.webp',
+                'assets/Durex-Thrill-Firsts/e9ccd8115659431.605281b40a17d.webp',
+                'assets/Durex-Thrill-Firsts/eedf25115659431.60551bb2863cd.webp',
+                'assets/Durex-Thrill-Firsts/TaKtkTR6kqt_poster.webp',
+                'assets/Durex-Thrill-Firsts/5F8vxEkua3j_576.webm',
+                'assets/Durex-Thrill-Firsts/6DDV9Tcu-Dr_360.webm',
+                'assets/Durex-Thrill-Firsts/DIi8stpFywg_576.webm',
+                'assets/Durex-Thrill-Firsts/HJZDzgbt-n__360.webm',
+                'assets/Durex-Thrill-Firsts/KZtgQUZhUjS_576.webm',
+                'assets/Durex-Thrill-Firsts/S4Tq62fWguA_576.webm',
+                'assets/Durex-Thrill-Firsts/TaKtkTR6kqt_576.webm',
+                'assets/Durex-Thrill-Firsts/output.webm'
             ]
         },
         'rimmel-wonderlux': {
             title: 'Rimmel WonderLux Mascara',
-            description: 'Beauty product campaign and visual design for Rimmel\'s WonderLux Mascara featuring stunning beauty photography. Created compelling visual content that highlights the product\'s benefits and appeal.',
-            type: 'Beauty Campaign',
+            description: `The Challenge
+
+The Rimmel Wonder'Lux Mascara launched alongside six Wonder Proof Liners, yet the global campaign lacked content tailored to regional audiences. Working closely with the Google team, we discovered new audience segments beyond traditional beauty enthusiasts. One of the most promising was video gamers, which inspired us to create a unique concept relevant to this community.
+
+
+The Idea
+
+We developed an original campaign concept, independent from the global direction, to test YouTube learnings specific to our regional audience. Our chosen ambassador, Fatma Almomen, a well-known influencer in the Middle East, embodied a modern superhero inspired by strong female characters from video games and films.
+
+Out of the six liner shades, we designed three signature makeup looks, each representing a unique "superpower" rooted in Rimmel's message of women empowerment.
+The powers were named:
+• Say No
+• Live The Moment
+• Be Heard
+
+The set design mirrored the mascara's pink metallic packaging, with subtle makeup that emphasized the lashes and eyes. Fatma was directed to express confidence and strength while maintaining the elegance of the modern Arabic woman.
+
+
+The Execution
+
+We launched the campaign with a hero video showcasing the mascara and its key benefits, followed by a reveal of the six liners under the tagline "Choose Your Power." The main video was supported by six-second cut-downs, each dedicated to one superpower and look.
+
+In the second phase, we released content featuring both the mascara and liners together, highlighting all six powers. We optimized assets for different social platforms, adapting the creative into GIFs, stills, stories, videos, and photos to maximize reach and engagement.`,
             client: 'Rimmel',
-            category: 'Beauty',
             behanceUrl: 'https://www.behance.net/gallery/91949647/Rimmel-WonderLux-Mascara',
             images: [
                 'assets/Rimmel-WonderLux-Mascara/rimmel_wonderlux_mascara_hero.webp',
@@ -334,10 +423,24 @@ To keep the content natural and accessible, we invited team members to model for
         },
         'bourjois-take-me-paris': {
             title: 'Bourjois: Take Me to Paris',
-            description: 'Romantic beauty campaign with Parisian flair showcasing Bourjois cosmetics in the City of Light. Created enchanting visual content that captures the essence of Paris and the brand\'s romantic appeal.',
-            type: 'Beauty Campaign',
+            description: `The Challenge
+
+Bourjois launched three new eyeshadow palettes, each inspired by an iconic Paris location: L'Opéra, La Seine, and Rue de Café. The brand's global guidelines emphasized capturing the authentic Parisian atmosphere through outdoor shoots in the city. However, filming in Paris was not possible due to budget limitations.
+
+The Solution
+
+Our big idea was to connect each palette to its Parisian inspiration through a campaign titled "Take Me to Paris." Every look transports the viewer to a different place in Paris, allowing them to experience the city's charm and joyful spirit without ever leaving home.
+
+To bring this concept to life, we reimagined Paris in a playful and metaphorical way. Our regional Bourjois ambassador, Noha Nabil, created three makeup looks—each one taking her to a different Parisian scene while she remained in her own space.
+
+Each video begins with Noha in her cozy room, flipping through a French magazine. She spots a location that inspires her, and the products appear around her as if by magic, helping her create her new look in a joyful and whimsical way. Once her makeup is complete, a quick transition transforms her surroundings into Paris, complete with a matching outfit and setting. The scene captures the brand's joyful and chic attitude, closing with Noha embodying the true "Joyfully Parisian" spirit.
+
+The Execution
+
+The long-format videos featured detailed tutorials of Noha using each palette, supported by complementary products available in stores. From these, we created a range of shorter cuts and resized assets optimized for different social media platforms.
+
+The content followed best practices and platform-specific trends discussed in our ongoing workshops with social media partners. The result was a series of visually engaging videos that brought Paris to life and showcased Bourjois' products through an imaginative, relatable story.`,
             client: 'Bourjois',
-            category: 'Beauty',
             behanceUrl: 'https://www.behance.net/gallery/91951183/Bourjois-Take-Me-to-Paris',
             images: [
                 'assets/Bourjois-Take-Me-to-Paris/bourjois-hero.webp',
@@ -371,9 +474,7 @@ Each influencer wore a bright color inspired by her featured product and was fil
 We titled the campaign "The Loved Ones", symbolizing both the products people love and the influencers who bring them to life. The influencers were encouraged to act naturally to connect with their audiences and express the playful, Parisian spirit of the brand.
 
 From the footage, we produced a range of short-form content for different social platforms. Each asset highlighted attitude, makeup results, product benefits, and application tips. The campaign successfully drove engagement and guided viewers to our online store for an easy shopping experience.`,
-            type: 'Influencer Campaign',
             client: 'Bourjois',
-            category: 'Beauty',
             behanceUrl: 'https://www.behance.net/gallery/91952259/Bourjois-Your-Loved-Ones',
             images: [
                 'assets/Bourjois-Your-Loved-Ones/bourjois_your_loved_ones_hero.webp',
@@ -419,26 +520,102 @@ From the footage, we produced a range of short-form content for different social
     function startAutoplay() {
         if (currentProjectImages.length <= 1) return; // Don't autoplay if only one image
         
-        autoplayInterval = setInterval(() => {
+        // Get current media type and set appropriate duration
+        const currentMedia = currentProjectImages[currentImageIndex];
+        const isVideo = currentMedia.endsWith('.webm') || currentMedia.endsWith('.mp4');
+        const duration = isVideo ? 4000 : 2000; // 4 seconds for videos, 2 seconds for images
+        
+        autoplayInterval = setTimeout(() => {
             currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
             changeToImage(currentImageIndex);
-        }, 2000); // 2 seconds
+            startAutoplay(); // Recursively start next autoplay
+        }, duration);
     }
     
     function stopAutoplay() {
         if (autoplayInterval) {
-            clearInterval(autoplayInterval);
+            clearTimeout(autoplayInterval);
             autoplayInterval = null;
         }
+    }
+    
+    // Video event handlers for smart autoplay
+    function handleVideoPlay() {
+        // Pause autoplay when user clicks play
+        stopAutoplay();
+    }
+    
+    function handleVideoEnd() {
+        // Resume autoplay when video ends
+        setTimeout(() => {
+            startAutoplay();
+        }, 500); // Small delay to ensure smooth transition
     }
     
     function changeToImage(index) {
         const mainImg = document.getElementById('lightbox-main-img');
         const thumbnails = document.querySelectorAll('.lightbox-thumbnail');
+        const currentMedia = currentProjectImages[index];
         
-        // Update main image
-        mainImg.src = currentProjectImages[index];
-        mainImg.alt = `${document.getElementById('lightbox-title').textContent} - Image ${index + 1}`;
+        if (currentMedia.endsWith('.webm') || currentMedia.endsWith('.mp4')) {
+            // Handle video
+            if (mainImg._currentVideo) {
+                mainImg._currentVideo.src = currentMedia;
+            } else {
+                // Create video element if it doesn't exist
+                const video = document.createElement('video');
+                video.src = currentMedia;
+                video.controls = true;
+                video.autoplay = false;
+                video.style.width = '100%';
+                video.style.height = 'auto';
+                video.style.maxHeight = '70vh';
+                video.style.objectFit = 'contain';
+                
+                mainImg.style.display = 'none';
+                mainImg.parentNode.appendChild(video);
+                mainImg._currentVideo = video;
+            }
+            
+            // Add video event listeners for smart autoplay
+            const video = mainImg._currentVideo;
+            if (video) {
+                // Remove existing listeners to avoid duplicates
+                video.removeEventListener('play', handleVideoPlay);
+                video.removeEventListener('ended', handleVideoEnd);
+                
+                // Add new listeners
+                video.addEventListener('play', handleVideoPlay);
+                video.addEventListener('ended', handleVideoEnd);
+                
+                // Clean up any play button overlays from the video element
+                const parent = video.parentNode;
+                const playButtons = parent.querySelectorAll('div[style*="position: absolute"]');
+                playButtons.forEach(btn => {
+                    if (btn.innerHTML.includes('▶')) {
+                        btn.remove();
+                    }
+                });
+            }
+            
+            // Remove any play button overlays from main area
+            const existingPlayButtons = mainImg.parentNode.querySelectorAll('div[style*="position: absolute"]');
+            existingPlayButtons.forEach(btn => {
+                if (btn.innerHTML.includes('▶') || btn.innerHTML.includes('play')) {
+                    btn.remove();
+                }
+            });
+        } else {
+            // Handle image
+            if (mainImg._currentVideo) {
+                mainImg._currentVideo.remove();
+                mainImg._currentVideo = null;
+            }
+            
+            mainImg.style.display = 'block';
+            mainImg.src = currentMedia;
+            mainImg.alt = `${document.getElementById('lightbox-title').textContent} - Media ${index + 1}`;
+        }
         
         // Update active thumbnail
         thumbnails.forEach((thumb, i) => {
@@ -451,36 +628,99 @@ From the footage, we produced a range of short-form content for different social
         // Stop any existing autoplay
         stopAutoplay();
         
+        // Clean up any existing play button overlays
+        const mainImg = document.getElementById('lightbox-main-img');
+        const existingPlayButtons = mainImg.parentNode.querySelectorAll('div[style*="position: absolute"]');
+        existingPlayButtons.forEach(btn => {
+            if (btn.innerHTML.includes('▶') || btn.innerHTML.includes('play')) {
+                btn.remove();
+            }
+        });
+        
         // Set current project images and reset index
         currentProjectImages = project.images;
         currentImageIndex = 0;
         // Populate lightbox content
         document.getElementById('lightbox-title').textContent = project.title;
         document.getElementById('lightbox-description').textContent = project.description;
-        document.getElementById('lightbox-type').textContent = project.type;
         document.getElementById('lightbox-client').textContent = project.client;
-        document.getElementById('lightbox-category').textContent = project.category;
         document.getElementById('lightbox-behance-link').href = project.behanceUrl;
         
-        // Set main image
-        const mainImg = document.getElementById('lightbox-main-img');
-        mainImg.src = project.images[0];
-        mainImg.alt = project.title;
+        // Set main image/video
+        const firstMedia = project.images[0];
         
-        // Create thumbnails
+        if (firstMedia.endsWith('.webm') || firstMedia.endsWith('.mp4')) {
+            // Create video element
+            const video = document.createElement('video');
+            video.src = firstMedia;
+            video.controls = true;
+            video.autoplay = false;
+            video.style.width = '100%';
+            video.style.height = 'auto';
+            video.style.maxHeight = '70vh';
+            video.style.objectFit = 'contain';
+            
+            // Clear and add video
+            mainImg.style.display = 'none';
+            mainImg.parentNode.appendChild(video);
+            
+            // Store reference for later updates
+            mainImg._currentVideo = video;
+            
+            // Add video event listeners for smart autoplay
+            video.addEventListener('play', handleVideoPlay);
+            video.addEventListener('ended', handleVideoEnd);
+            
+            // Remove any play button overlays from main area
+            const existingPlayButtons = mainImg.parentNode.querySelectorAll('div[style*="position: absolute"]');
+            existingPlayButtons.forEach(btn => {
+                if (btn.innerHTML.includes('▶') || btn.innerHTML.includes('play')) {
+                    btn.remove();
+                }
+            });
+        } else {
+            // Hide any existing video
+            if (mainImg._currentVideo) {
+                mainImg._currentVideo.remove();
+                mainImg._currentVideo = null;
+            }
+            
+            // Show image
+            mainImg.style.display = 'block';
+            mainImg.src = firstMedia;
+            mainImg.alt = project.title;
+        }
+        
+        // Create thumbnails (only if 2 or more items)
         const thumbnailsContainer = document.getElementById('lightbox-thumbnails');
         thumbnailsContainer.innerHTML = '';
         
-        project.images.forEach((imageSrc, index) => {
+        if (project.images.length >= 2) {
+            project.images.forEach((mediaSrc, index) => {
             const thumbnail = document.createElement('div');
             thumbnail.className = 'lightbox-thumbnail';
             if (index === 0) thumbnail.classList.add('active');
             
-            const img = document.createElement('img');
-            img.src = imageSrc;
-            img.alt = `${project.title} - Image ${index + 1}`;
+            if (mediaSrc.endsWith('.webm') || mediaSrc.endsWith('.mp4')) {
+                // Create video thumbnail using static image
+                const img = document.createElement('img');
+                // Use thumbnail image for videos
+                const thumbSrc = mediaSrc.replace('.webm', '_thumb.webp').replace('.mp4', '_thumb.webp');
+                img.src = thumbSrc;
+                img.alt = `${project.title} - Video ${index + 1}`;
+                img.style.width = '100%';
+                img.style.height = '100%';
+                img.style.objectFit = 'cover';
+                
+                thumbnail.appendChild(img);
+            } else {
+                // Create image thumbnail
+                const img = document.createElement('img');
+                img.src = mediaSrc;
+                img.alt = `${project.title} - Media ${index + 1}`;
+                thumbnail.appendChild(img);
+            }
             
-            thumbnail.appendChild(img);
             thumbnailsContainer.appendChild(thumbnail);
             
             // Add click event to thumbnail
@@ -493,13 +733,63 @@ From the footage, we produced a range of short-form content for different social
                 setTimeout(startAutoplay, 1000);
             });
         });
+        }
         
         // Show lightbox
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
         
+        // Additional cleanup for any stray play buttons
+        setTimeout(() => {
+            // Clean up main display area
+            const mainDisplayArea = document.querySelector('.lightbox-main-image');
+            if (mainDisplayArea) {
+                const playButtons = mainDisplayArea.querySelectorAll('div[style*="position: absolute"]');
+                playButtons.forEach(btn => {
+                    if (btn.innerHTML.includes('▶')) {
+                        btn.remove();
+                    }
+                });
+            }
+            
+            // Clean up any video elements in main display
+            const mainVideos = document.querySelectorAll('.lightbox-main-image video');
+            mainVideos.forEach(video => {
+                const parent = video.parentNode;
+                const playButtons = parent.querySelectorAll('div[style*="position: absolute"]');
+                playButtons.forEach(btn => {
+                    if (btn.innerHTML.includes('▶')) {
+                        btn.remove();
+                    }
+                });
+            });
+        }, 100);
+        
         // Start autoplay
         startAutoplay();
+        
+        // Set up mutation observer to catch any new play buttons
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                mutation.addedNodes.forEach((node) => {
+                    if (node.nodeType === 1 && node.tagName === 'DIV') {
+                        if (node.innerHTML.includes('▶') && node.style.position === 'absolute') {
+                            // Check if it's in the main display area
+                            const mainDisplayArea = document.querySelector('.lightbox-main-image');
+                            if (mainDisplayArea && mainDisplayArea.contains(node)) {
+                                node.remove();
+                            }
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Start observing the main display area
+        const mainDisplayArea = document.querySelector('.lightbox-main-image');
+        if (mainDisplayArea) {
+            observer.observe(mainDisplayArea, { childList: true, subtree: true });
+        }
     }
     
     // Close lightbox function
