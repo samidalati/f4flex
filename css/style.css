@@ -647,7 +647,7 @@ section {
 
 .service-card {
     background: #111111;
-    padding: 40px 30px;
+    padding: 40px 20px;
     border-radius: 20px;
     text-align: center;
     transition: all 0.3s ease;
@@ -978,6 +978,7 @@ section {
 
 .footer-logo p {
     color: #b0b0b0;
+    text-align: center;
 }
 
 .footer-links {
