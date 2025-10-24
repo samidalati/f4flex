@@ -229,7 +229,7 @@ revealElements.forEach(element => {
     // Project data with images and details
     const projectData = {
         'nars-video-shoot': {
-            title: 'NARS Video Shoot',
+            title: 'Video Shoot',
             description: `The Challenge
 
 NARS is one of the most recognized makeup brands in the Middle East. The brand faced a unique challenge: the need to produce localized content that resonates with regional audiences, while adhering to extremely strict global guidelines that allow no creative deviation.
@@ -256,6 +256,7 @@ The team included:
 
 The final assets aligned perfectly with NARS' global quality benchmarks while authentically representing the Middle Eastern audience, achieving the delicate balance between local relevance and global consistency.`,
             client: 'NARS',
+            clientLogo: 'assets/partners/Partenrs_0011_NARS.webp',
             behanceUrl: 'https://www.behance.net/gallery/116455095/NARS-Video-shoot',
             images: [
                 'assets/NARS-Video-Shoot/3i6KmsZkJ5V_576.webm',
@@ -263,7 +264,7 @@ The final assets aligned perfectly with NARS' global quality benchmarks while au
             ]
         },
         'wella-social-content': {
-            title: 'Wella Social Media Content',
+            title: 'Social Media Content',
             description: `The Challenge
 
 The Wella Arabia Instagram page lacked localized content, as the global team did not provide regional assets despite launching products exclusively for the Middle East. Our objective was to produce fresh, engaging visuals tailored to the regional market while staying within a limited budget.
@@ -280,6 +281,7 @@ Wella Permanent Hair Color and Results (Koleston and Soft Color)
 
 To keep the content natural and accessible, we invited team members to model for the shoot. They arrived with their hair styled naturally, helping us create organic, realistic visuals that featured Wella's most loved products while staying true to the brand's identity.`,
             client: 'Wella',
+            clientLogo: 'assets/partners/Partenrs_0006_Wella.webp',
             behanceUrl: 'https://www.behance.net/gallery/168175917/Wella-Social-media-content',
             images: [
                 'assets/Wella-Social-Media-Content/wella_social_media_content_hero.webp',
@@ -308,7 +310,7 @@ To keep the content natural and accessible, we invited team members to model for
             ]
         },
         'durex-thrill-firsts': {
-            title: 'Durex: The Thrill of Firsts',
+            title: 'The Thrill of Firsts',
             description: `The Challenge
 
 Durex South America wanted to create a campaign that spoke directly to a younger audience aged 18 to 25. After several unsuccessful attempts, the project was reassigned to a younger team at Havas Middle East, better suited to understand this generation's mindset, culture, and desires. The project was led by myself as Art Director and my partner Yasmina as Copywriter.
@@ -363,6 +365,7 @@ We created an interactive landing page for both desktop and mobile, combining ed
 
 The result was a digital experience that inspired curiosity, encouraged conversation, and reinforced Durex's message of safety, confidence, and empowerment.`,
             client: 'Durex',
+            clientLogo: 'assets/partners/Partenrs_0000_Bourjois.webp', // Using Bourjois as placeholder since Durex isn't in partners
             behanceUrl: 'https://www.behance.net/gallery/115659431/Durex-The-Thrill-Of-Firsts',
             images: [
                 'assets/Durex-Thrill-Firsts/40b9e4115659431.60551bb285bc9.webp',
@@ -384,7 +387,7 @@ The result was a digital experience that inspired curiosity, encouraged conversa
             ]
         },
         'rimmel-wonderlux': {
-            title: 'Rimmel WonderLux Mascara',
+            title: 'WonderLux Mascara',
             description: `The Challenge
 
 The Rimmel Wonder'Lux Mascara launched alongside six Wonder Proof Liners, yet the global campaign lacked content tailored to regional audiences. Working closely with the Google team, we discovered new audience segments beyond traditional beauty enthusiasts. One of the most promising was video gamers, which inspired us to create a unique concept relevant to this community.
@@ -409,6 +412,7 @@ We launched the campaign with a hero video showcasing the mascara and its key be
 
 In the second phase, we released content featuring both the mascara and liners together, highlighting all six powers. We optimized assets for different social platforms, adapting the creative into GIFs, stills, stories, videos, and photos to maximize reach and engagement.`,
             client: 'Rimmel',
+            clientLogo: 'assets/partners/Partenrs_0004_Rimmel.webp',
             behanceUrl: 'https://www.behance.net/gallery/91949647/Rimmel-WonderLux-Mascara',
             images: [
                 'assets/Rimmel-WonderLux-Mascara/rimmel_wonderlux_mascara_hero.webp',
@@ -422,7 +426,7 @@ In the second phase, we released content featuring both the mascara and liners t
             ]
         },
         'bourjois-take-me-paris': {
-            title: 'Bourjois: Take Me to Paris',
+            title: 'Take Me to Paris',
             description: `The Challenge
 
 Bourjois launched three new eyeshadow palettes, each inspired by an iconic Paris location: L'Opéra, La Seine, and Rue de Café. The brand's global guidelines emphasized capturing the authentic Parisian atmosphere through outdoor shoots in the city. However, filming in Paris was not possible due to budget limitations.
@@ -441,6 +445,7 @@ The long-format videos featured detailed tutorials of Noha using each palette, s
 
 The content followed best practices and platform-specific trends discussed in our ongoing workshops with social media partners. The result was a series of visually engaging videos that brought Paris to life and showcased Bourjois' products through an imaginative, relatable story.`,
             client: 'Bourjois',
+            clientLogo: 'assets/partners/Partenrs_0000_Bourjois.webp',
             behanceUrl: 'https://www.behance.net/gallery/91951183/Bourjois-Take-Me-to-Paris',
             images: [
                 'assets/Bourjois-Take-Me-to-Paris/bourjois-hero.webp',
@@ -455,7 +460,7 @@ The content followed best practices and platform-specific trends discussed in ou
             ]
         },
         'bourjois-loved-ones': {
-            title: 'Bourjois: Your Loved Ones',
+            title: 'Your Loved Ones',
             description: `The Challenge
 
 To fill a gap in our media plan and promote our core products in Face, Eyes, and Lips, we needed a social campaign featuring three popular influencers from the region. At the same time, the brand was introducing new visual guidelines. Our goal was to create a campaign that smoothly bridged the old and new aesthetics while reflecting the brand's joyful identity, Joyfully Parisian.
@@ -475,6 +480,7 @@ We titled the campaign "The Loved Ones", symbolizing both the products people lo
 
 From the footage, we produced a range of short-form content for different social platforms. Each asset highlighted attitude, makeup results, product benefits, and application tips. The campaign successfully drove engagement and guided viewers to our online store for an easy shopping experience.`,
             client: 'Bourjois',
+            clientLogo: 'assets/partners/Partenrs_0000_Bourjois.webp',
             behanceUrl: 'https://www.behance.net/gallery/91952259/Bourjois-Your-Loved-Ones',
             images: [
                 'assets/Bourjois-Your-Loved-Ones/bourjois_your_loved_ones_hero.webp',
@@ -520,21 +526,23 @@ From the footage, we produced a range of short-form content for different social
     function startAutoplay() {
         if (currentProjectImages.length <= 1) return; // Don't autoplay if only one image
         
+        // Clear any existing interval first
+        stopAutoplay();
+        
         // Get current media type and set appropriate duration
         const currentMedia = currentProjectImages[currentImageIndex];
         const isVideo = currentMedia.endsWith('.webm') || currentMedia.endsWith('.mp4');
         const duration = isVideo ? 4000 : 2000; // 4 seconds for videos, 2 seconds for images
         
-        autoplayInterval = setTimeout(() => {
+        autoplayInterval = setInterval(() => {
             currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
             changeToImage(currentImageIndex);
-            startAutoplay(); // Recursively start next autoplay
         }, duration);
     }
     
     function stopAutoplay() {
         if (autoplayInterval) {
-            clearTimeout(autoplayInterval);
+            clearInterval(autoplayInterval);
             autoplayInterval = null;
         }
     }
@@ -643,7 +651,15 @@ From the footage, we produced a range of short-form content for different social
         // Populate lightbox content
         document.getElementById('lightbox-title').textContent = project.title;
         document.getElementById('lightbox-description').textContent = project.description;
-        document.getElementById('lightbox-client').textContent = project.client;
+        
+        // Display client logo instead of text
+        const clientLogoContainer = document.getElementById('lightbox-client-logo');
+        if (project.clientLogo) {
+            clientLogoContainer.innerHTML = `<img src="${project.clientLogo}" alt="${project.client}" />`;
+        } else {
+            clientLogoContainer.innerHTML = `<span>${project.client}</span>`;
+        }
+        
         document.getElementById('lightbox-behance-link').href = project.behanceUrl;
         
         // Set main image/video
@@ -730,7 +746,7 @@ From the footage, we produced a range of short-form content for different social
                 currentImageIndex = index;
                 changeToImage(index);
                 // Restart autoplay after user interaction
-                setTimeout(startAutoplay, 1000);
+                setTimeout(startAutoplay, 2000);
             });
         });
         }
