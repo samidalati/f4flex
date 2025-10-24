@@ -258,7 +258,21 @@ revealElements.forEach(element => {
         },
         'wella-social-content': {
             title: 'Wella Social Media Content',
-            description: 'Creative social media campaigns for Wella beauty brand featuring engaging visual content and strategic brand messaging. Developed comprehensive social media strategy with stunning visuals that resonate with target audiences.',
+            description: `The Challenge
+
+The Wella Arabia Instagram page lacked localized content, as the global team did not provide regional assets despite launching products exclusively for the Middle East. Our objective was to produce fresh, engaging visuals tailored to the regional market while staying within a limited budget.
+
+The Solution
+
+We produced a diverse set of 40 images in a single session for both local and global social media channels. With a modest budget, we managed every stage of production, from creative direction and styling to photography and prop sourcing. We hired a professional photographer and used team members as models to achieve authentic, relatable results.
+
+Color By You | Crazy Temporary and Permanent Hair Color
+
+We created styled product content that highlighted the brand's bold color range, mixing possibilities, and temporary top coats. The visuals also included detailed pack shots to showcase the complete color collection.
+
+Wella Permanent Hair Color and Results (Koleston and Soft Color)
+
+To keep the content natural and accessible, we invited team members to model for the shoot. They arrived with their hair styled naturally, helping us create organic, realistic visuals that featured Wella's most loved products while staying true to the brand's identity.`,
             type: 'Social Media',
             client: 'Wella',
             category: 'Social Media',
@@ -269,7 +283,24 @@ revealElements.forEach(element => {
                 'assets/Wella-Social-Media-Content/wella_social_media_content_2.webp',
                 'assets/Wella-Social-Media-Content/wella_social_media_content_3.webp',
                 'assets/Wella-Social-Media-Content/wella_social_media_content_4.webp',
-                'assets/Wella-Social-Media-Content/wella_social_media_content_5.webp'
+                'assets/Wella-Social-Media-Content/wella_social_media_content_5.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_6.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_7.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_8.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_9.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_10.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_11.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_12.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_13.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_14.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_15.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_16.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_17.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_18.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_19.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_20.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_21.webp',
+                'assets/Wella-Social-Media-Content/wella_social_media_content_22.webp'
             ]
         },
         'durex-thrill-firsts': {
@@ -391,7 +422,7 @@ From the footage, we produced a range of short-form content for different social
         autoplayInterval = setInterval(() => {
             currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
             changeToImage(currentImageIndex);
-        }, 5000); // 5 seconds
+        }, 2000); // 2 seconds
     }
     
     function stopAutoplay() {

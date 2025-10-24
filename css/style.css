@@ -299,8 +299,8 @@ body {
 
 .lightbox-content {
     position: relative;
-    width: 90%;
-    max-width: 1200px;
+    width: 95%;
+    max-width: 1400px;
     height: 90%;
     margin: auto;
     background: #1a1a1a;
@@ -317,14 +317,14 @@ body {
 }
 
 .lightbox-close {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     background: rgba(244, 0, 81, 0.9);
     color: white;
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     font-size: 24px;
     cursor: pointer;
@@ -352,7 +352,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 60%;
+    max-width: 50%;
 }
 
 .lightbox-main-image {
@@ -406,13 +406,13 @@ body {
 }
 
 .lightbox-info {
-    flex: 1;
+    flex: 2;
     padding: 20px;
     background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
     border-radius: 10px;
     overflow-y: auto;
-    max-width: 40%;
-    min-width: 300px;
+    max-width: 50%;
+    min-width: 400px;
 }
 
 .lightbox-info h2 {
@@ -476,6 +476,11 @@ body {
 
 .lightbox-behance-btn i {
     font-size: 1.2rem;
+}
+
+/* Hide Behance link buttons */
+.lightbox-behance-btn {
+    display: none !important;
 }
 
 /* Responsive Lightbox */
