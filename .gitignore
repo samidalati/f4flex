@@ -12,6 +12,9 @@ Thumbs.db
 *.jpg
 *.png
 
+# Python scripts
+*.py
+
 # Editor and IDE files
 .vscode/
 .idea/
