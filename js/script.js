@@ -129,43 +129,22 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Form submission
+// Form submission - Web3Forms handles this automatically
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const name = contactForm.querySelector('input[type="text"]').value;
-        const email = contactForm.querySelector('input[type="email"]').value;
-        const subject = contactForm.querySelector('input[placeholder="Subject"]').value;
-        const message = contactForm.querySelector('textarea').value;
-        
-        // Simple validation
-        if (!name || !email || !subject || !message) {
-            alert('Please fill in all fields.');
-            return;
-        }
-        
-        // Simulate form submission
+        // Let Web3Forms handle the submission
+        // Just show loading state
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         
+        // Reset button after 5 seconds (in case of redirect)
         setTimeout(() => {
-            submitBtn.textContent = 'Sent! We\'ll get back to you shortly.';
-            submitBtn.style.background = '#28a745';
-            contactForm.reset();
-            
-            // Reset button after 4 seconds
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.style.background = '';
-                submitBtn.disabled = false;
-            }, 4000);
-        }, 2000);
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }, 5000);
     });
 }
 
