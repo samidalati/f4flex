@@ -406,11 +406,12 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                    <input type="hidden" name="to" value="hello@f4flex.com">
+                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="form">
+                    <input type="hidden" name="access_key" value="6546fbe4-2a23-403e-8b6e-e040d9c79a51">
                     <input type="hidden" name="subject" value="New Contact Form Submission from F4Flex Website">
                     <input type="hidden" name="from_name" value="F4Flex Contact Form">
+                    <input type="hidden" name="redirect" value="https://f4flex.com/#contact">
+                    <input type="checkbox" name="botcheck" id="" style="display: none;">
                     
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required>
