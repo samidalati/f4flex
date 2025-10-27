@@ -962,9 +962,9 @@ section {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 60px;
-    margin-bottom: 40px;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    margin-bottom: 50px;
 }
 
 .footer-logo-img {
@@ -978,13 +978,14 @@ section {
 
 .footer-logo p {
     color: #b0b0b0;
-    text-align: center;
+    text-align: left;
+    padding: 0 20px 0 38px;
 }
 
 .footer-links {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
 }
 
 .footer-column h4 {
