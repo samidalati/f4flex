@@ -91,7 +91,7 @@ if (testimonials.length > 1) {
     setInterval(nextTestimonial, 5000);
 }
 
-// Intersection Observer for animations
+// Enhanced Intersection Observer for animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -100,20 +100,43 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('animate-in');
         }
     });
 }, observerOptions);
 
-// Observe elements for animation
+// Staggered animation for portfolio items
+const staggerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const items = entry.target.querySelectorAll('.portfolio-item, .service-card');
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('animate-in');
+                }, index * 150); // 150ms delay between each item
+            });
+        }
+    });
+}, observerOptions);
+
+// Initialize animations
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .blog-card, .contact-item');
+    // Animate sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        observer.observe(section);
+    });
     
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    // Animate portfolio and services with stagger
+    const portfolioSection = document.querySelector('.portfolio');
+    const servicesSection = document.querySelector('.services');
+    
+    if (portfolioSection) staggerObserver.observe(portfolioSection);
+    if (servicesSection) staggerObserver.observe(servicesSection);
+    
+    // Animate other elements
+    const otherElements = document.querySelectorAll('.contact-item, .partner-item');
+    otherElements.forEach(el => {
         observer.observe(el);
     });
 });
