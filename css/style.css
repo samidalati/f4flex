@@ -1013,6 +1013,14 @@ section.animate-in {
     margin-bottom: 50px;
 }
 
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+}
+
 .footer-logo-img {
     height: 150px;
     width: auto;
@@ -1102,59 +1110,242 @@ section.animate-in {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: rgba(10, 10, 10, 0.95);
+        background-color: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(10px);
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        padding: 20px 0;
+        padding: 10px 0;
+        z-index: 1000;
     }
     
     .nav-menu.active {
         left: 0;
     }
     
+    .nav-link {
+        padding: 8px 20px;
+        font-size: 1rem;
+        margin: 0;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        display: block;
+    }
+    
+    .nav-link:hover {
+        background: rgba(244, 0, 81, 0.1);
+    }
+    
+    /* Hide floating elements on mobile */
+    .floating-element {
+        display: none;
+    }
+    
+    /* Hide hero graphic on mobile */
+    .hero-graphic {
+        display: none;
+    }
+    
+    /* Hide hero image section on mobile */
+    .hero-image {
+        display: none;
+    }
+    
+    /* Hide about image section on mobile */
+    .about-image {
+        display: none;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
+        padding: 90px 0 20px 0;
+        min-height: 60vh;
     }
     
     .hero-title {
         font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        padding: 0 20px;
     }
     
     .hero-buttons {
         justify-content: center;
         flex-wrap: wrap;
+        gap: 15px;
     }
     
+    .btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+        min-width: 140px;
+    }
+    
+    /* Mobile Sections */
+    section {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 40px;
+        padding: 0 20px;
+    }
+    
+    /* Mobile About */
     .about-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .stats {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
     
-    .footer-links {
-        grid-template-columns: 1fr;
+    .about-text {
+        padding: 0 20px;
     }
     
+    .about-text h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 20px;
+    }
+    
+    .stat-item {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-label {
+        font-size: 1rem;
+    }
+    
+    /* Mobile Services */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 20px;
+    }
+    
+    .service-card {
+        padding: 30px 20px;
+    }
+    
+    .service-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .service-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    /* Mobile Portfolio */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 20px;
+    }
+    
+    .portfolio-item {
+        margin-bottom: 20px;
+    }
+    
+    .portfolio-overlay h3 {
+        font-size: 1.2rem;
+    }
+    
+    .portfolio-overlay p {
+        font-size: 0.9rem;
+    }
+    
+    /* Mobile Contact */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .contact-info {
+        padding: 0 20px;
+    }
+    
+    .contact-item {
+        margin-bottom: 25px;
+    }
+    
+    .contact-item h4 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    
+    .contact-item p {
+        font-size: 1rem;
+    }
+    
+    .contact-form {
+        padding: 0 20px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 15px;
+        font-size: 1rem;
+    }
+    
+    /* Mobile Footer */
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-column h4 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .footer-column ul li {
+        margin-bottom: 8px;
+    }
+    
+    .footer-column ul li a {
+        font-size: 1rem;
+        padding: 8px 0;
+        display: block;
+    }
+    
+    /* Mobile Partners */
     .partners-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(6, 1fr);
         gap: 20px;
+        padding: 0 20px;
     }
     
+    /* Mobile Logo Sizes */
     .logo-img {
         height: 80px;
     }
@@ -1163,24 +1354,146 @@ section.animate-in {
         height: 130px;
         padding: 18px;
     }
+    
+    /* Mobile Lightbox */
+    .lightbox-content {
+        width: 95%;
+        height: 85%;
+        margin: 7.5% auto;
+    }
+    
+    .lightbox-image {
+        height: 60%;
+    }
+    
+    .lightbox-info {
+        padding: 20px;
+    }
+    
+    .lightbox-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .lightbox-info p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .lightbox-thumbnails {
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .lightbox-thumbnail {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 @media (max-width: 480px) {
+    /* Extra Small Mobile */
+    .hero-content {
+        min-height: 50vh;
+        padding: 90px 0 15px 0;
+    }
+    
     .hero-title {
         font-size: 2rem;
+        line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 15px;
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.95rem;
+        padding: 0 15px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+        min-width: 120px;
     }
     
     .services-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .service-card {
+        padding: 25px 15px;
+    }
+    
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .service-card p {
+        font-size: 0.9rem;
     }
     
     .portfolio-grid {
         grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+    
+    .about-text {
+        padding: 0 15px;
+    }
+    
+    .about-text h3 {
+        font-size: 1.6rem;
+    }
+    
+    .about-text p {
+        font-size: 0.95rem;
+    }
+    
+    .stats {
+        padding: 0 15px;
+    }
+    
+    .stat-item {
+        padding: 15px;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+    }
+    
+    .contact-info {
+        padding: 0 15px;
+    }
+    
+    .contact-form {
+        padding: 0 15px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+    
+    .footer-content {
+        gap: 30px;
+    }
+    
+    .footer-column h4 {
+        font-size: 1.1rem;
+    }
+    
+    .footer-column ul li a {
+        font-size: 0.95rem;
     }
     
     .logo-img {
@@ -1196,5 +1509,39 @@ section.animate-in {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(12, 1fr);
         gap: 15px;
+        padding: 0 15px;
+    }
+    
+    /* Extra Small Mobile Lightbox */
+    .lightbox-content {
+        width: 98%;
+        height: 90%;
+        margin: 5% auto;
+    }
+    
+    .lightbox-image {
+        height: 55%;
+    }
+    
+    .lightbox-info {
+        padding: 15px;
+    }
+    
+    .lightbox-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .lightbox-info p {
+        font-size: 0.85rem;
+    }
+    
+    .lightbox-thumbnails {
+        padding: 10px;
+        gap: 8px;
+    }
+    
+    .lightbox-thumbnail {
+        width: 50px;
+        height: 50px;
     }
 }
