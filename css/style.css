@@ -231,6 +231,8 @@ body {
     border-radius: 50%;
     background: #f40051;
     animation: float 6s ease-in-out infinite;
+    transition: transform 0.08s linear;
+    will-change: transform;
 }
 
 .element-1 {
@@ -260,6 +262,10 @@ body {
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
+}
+
+.floating-element.runaway-active {
+    animation: none !important;
 }
 
 .scroll-indicator {

@@ -147,6 +147,8 @@ window.addEventListener('scroll', () => {
     const parallaxElements = document.querySelectorAll('.floating-element');
     
     parallaxElements.forEach((element, index) => {
+        // Skip if element is in runaway interaction state to avoid transform conflicts
+        if (element.classList.contains('runaway-active')) return;
         const speed = 0.5 + (index * 0.1);
         element.style.transform = `translateY(${scrolled * speed}px)`;
     });
@@ -872,3 +874,64 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Run-away interaction for hero circles
+document.addEventListener('DOMContentLoaded', () => {
+    const heroGraphic = document.querySelector('.hero-graphic');
+    if (!heroGraphic) return;
+
+    const circles = Array.from(heroGraphic.querySelectorAll('.floating-element'));
+    if (!circles.length) return;
+
+    const INFLUENCE_RADIUS = 200; // px
+    const MAX_OFFSET = 120; // px
+
+    function handleMouseMove(e) {
+        const graphicRect = heroGraphic.getBoundingClientRect();
+
+        circles.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+
+            const dx = cx - e.clientX;
+            const dy = cy - e.clientY;
+            const dist = Math.hypot(dx, dy) || 0.0001;
+
+            if (dist < INFLUENCE_RADIUS) {
+                el.classList.add('runaway-active');
+                // Normalize direction away from pointer
+                const ux = dx / dist;
+                const uy = dy / dist;
+                const strength = (1 - dist / INFLUENCE_RADIUS);
+                const move = Math.min(MAX_OFFSET, MAX_OFFSET * strength);
+                let tx = ux * move;
+                let ty = uy * move;
+
+                // Optional: clamp so circle visual stays roughly within hero graphic bounds
+                const maxX = graphicRect.width / 2 + MAX_OFFSET;
+                const maxY = graphicRect.height / 2 + MAX_OFFSET;
+                tx = Math.max(-maxX, Math.min(maxX, tx));
+                ty = Math.max(-maxY, Math.min(maxY, ty));
+
+                el.style.transform = `translate(${tx}px, ${ty}px)`;
+            } else {
+                // Restore when far enough
+                if (el.classList.contains('runaway-active')) {
+                    el.classList.remove('runaway-active');
+                    el.style.transform = '';
+                }
+            }
+        });
+    }
+
+    function handleMouseLeave() {
+        circles.forEach((el) => {
+            el.classList.remove('runaway-active');
+            el.style.transform = '';
+        });
+    }
+
+    heroGraphic.addEventListener('mousemove', handleMouseMove);
+    heroGraphic.addEventListener('mouseleave', handleMouseLeave);
+});
