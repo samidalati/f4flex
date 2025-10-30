@@ -337,30 +337,32 @@ body {
 }
 
 .lightbox-close {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(244, 0, 81, 0.9);
-    color: white;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: none;
+    color: #f40051;
     border: none;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    font-size: 24px;
+    font-size: 40px;
+    font-weight: 300;
     cursor: pointer;
     z-index: 1001;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 1;
 }
 
 .lightbox-close:hover {
-    background: #f40051;
+    color: #d40045;
     transform: scale(1.1);
 }
 
 .lightbox-body {
+    position: relative;
     display: flex;
     height: 100%;
     padding: 60px 40px 40px;
