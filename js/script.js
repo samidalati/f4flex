@@ -105,11 +105,11 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Staggered animation for portfolio items
+// Staggered animation for portfolio, services, and partners items
 const staggerObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const items = entry.target.querySelectorAll('.portfolio-item, .service-card');
+            const items = entry.target.querySelectorAll('.portfolio-item, .service-card, .partner-item');
             items.forEach((item, index) => {
                 setTimeout(() => {
                     item.classList.add('animate-in');
@@ -130,12 +130,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animate portfolio and services with stagger
     const portfolioSection = document.querySelector('.portfolio');
     const servicesSection = document.querySelector('.services');
+    const partnersSection = document.querySelector('.partners');
     
     if (portfolioSection) staggerObserver.observe(portfolioSection);
     if (servicesSection) staggerObserver.observe(servicesSection);
+    if (partnersSection) staggerObserver.observe(partnersSection);
     
     // Animate other elements
-    const otherElements = document.querySelectorAll('.contact-item, .partner-item');
+    const otherElements = document.querySelectorAll('.contact-item');
     otherElements.forEach(el => {
         observer.observe(el);
     });
