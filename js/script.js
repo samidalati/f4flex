@@ -68,6 +68,11 @@ window.addEventListener('scroll', () => {
     } else {
         navbar.style.background = 'rgba(10, 10, 10, 0.95)';
     }
+    // Update scroll progress bar
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = Math.max(0, Math.min(1, docHeight ? scrollTop / docHeight : 0));
+    navbar.style.setProperty('--scroll-progress', `${(pct * 100).toFixed(1)}%`);
 });
 
 
@@ -141,6 +146,38 @@ document.addEventListener('DOMContentLoaded', () => {
     otherElements.forEach(el => {
         observer.observe(el);
     });
+
+    // Stats count-up when visible
+    const statEls = document.querySelectorAll('.stats .stat-item h4');
+    const parsedTargets = Array.from(statEls).map(el => {
+        const raw = el.textContent.trim();
+        const hasPlus = raw.endsWith('+');
+        const numeric = parseInt(raw.replace(/[^0-9]/g, ''), 10) || 0;
+        return { el, target: numeric, suffix: hasPlus ? '+' : '' };
+    });
+    const animateCount = (el, to, suffix) => {
+        const DURATION = 1400;
+        const start = performance.now();
+        const from = 0;
+        function step(now) {
+            const t = Math.min(1, (now - start) / DURATION);
+            const eased = 1 - Math.pow(1 - t, 3);
+            const val = Math.round(from + (to - from) * eased);
+            el.textContent = `${val}${suffix}`;
+            if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    };
+    const statsObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                parsedTargets.forEach(({ el, target, suffix }) => animateCount(el, target, suffix));
+                obs.disconnect();
+            }
+        });
+    }, { threshold: 0.3 });
+    const aboutSection = document.querySelector('#about');
+    if (aboutSection) statsObserver.observe(aboutSection);
 });
 
 // Parallax effect for hero section
@@ -153,6 +190,121 @@ window.addEventListener('scroll', () => {
         if (element.classList.contains('runaway-active')) return;
         const speed = 0.5 + (index * 0.1);
         element.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+
+    // Subtle scroll-reactive background shift
+    const shiftX = Math.sin(scrolled * 0.002) * 40; // px
+    const shiftY = Math.cos(scrolled * 0.0015) * 60; // px
+    document.body.style.setProperty('--bg-shift-x', `${shiftX.toFixed(2)}px`);
+    document.body.style.setProperty('--bg-shift-y', `${shiftY.toFixed(2)}px`);
+    
+    // (Removed) scroll-based partners glow – replaced with mouse-follow spotlight
+});
+
+// Partners mouse-follow spotlight
+document.addEventListener('DOMContentLoaded', () => {
+    const partners = document.querySelector('.partners');
+    if (!partners) return;
+    let rafId = null;
+    // Create spotlight layer
+    const spot = document.createElement('div');
+    spot.className = 'partners-spotlight';
+    partners.appendChild(spot);
+    const setPos = (clientX, clientY) => {
+        const rect = partners.getBoundingClientRect();
+        const x = Math.max(0, Math.min(rect.width, clientX - rect.left));
+        const y = Math.max(0, Math.min(rect.height, clientY - rect.top));
+        const xPct = (x / rect.width) * 100;
+        const yPct = (y / rect.height) * 100;
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+            spot.style.setProperty('--spot-x', `${xPct}%`);
+            spot.style.setProperty('--spot-y', `${yPct}%`);
+        });
+    };
+    const show = () => { spot.style.opacity = '0.75'; };
+    const hide = () => { spot.style.opacity = '0'; };
+    partners.addEventListener('mouseenter', (e) => { show(); setPos(e.clientX, e.clientY); });
+    partners.addEventListener('mousemove', (e) => setPos(e.clientX, e.clientY));
+    partners.addEventListener('mouseleave', hide);
+    // Touch support
+    partners.addEventListener('touchstart', (e) => {
+        const t = e.touches[0]; if (!t) return; show(); setPos(t.clientX, t.clientY);
+    }, { passive: true });
+    partners.addEventListener('touchmove', (e) => {
+        const t = e.touches[0]; if (!t) return; setPos(t.clientX, t.clientY);
+    }, { passive: true });
+    partners.addEventListener('touchend', hide);
+});
+
+// Magnetic buttons
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn');
+    const STRENGTH = 0.25; // how strongly it follows
+    buttons.forEach((btn) => {
+        let rafId = null;
+        function onMove(e) {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - (rect.left + rect.width / 2);
+            const y = e.clientY - (rect.top + rect.height / 2);
+            const tx = x * STRENGTH;
+            const ty = y * STRENGTH;
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+                btn.style.transform = `translate(${tx}px, ${ty}px)`;
+                btn.style.boxShadow = `0 16px 30px rgba(244, 0, 81, 0.25)`;
+            });
+        }
+        function reset() {
+            if (rafId) cancelAnimationFrame(rafId);
+            btn.style.transform = '';
+            btn.style.boxShadow = '';
+        }
+        btn.addEventListener('mousemove', onMove);
+        btn.addEventListener('mouseleave', reset);
+        btn.addEventListener('touchmove', (e) => {
+            const t = e.touches[0];
+            if (!t) return;
+            onMove(t);
+        }, { passive: true });
+        btn.addEventListener('touchend', reset);
+    });
+});
+
+// Portfolio 3D tilt + sheen
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.portfolio-item');
+    const MAX_ROTATE = 8; // deg
+    const REST_TRANSITION = 'transform 300ms ease';
+    const ACTIVE_TRANSITION = 'transform 60ms linear';
+    cards.forEach(card => {
+        function setSheen(e) {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const px = x / rect.width;
+            const py = y / rect.height;
+            const rx = (py - 0.5) * -2 * MAX_ROTATE;
+            const ry = (px - 0.5) * 2 * MAX_ROTATE;
+            card.style.transition = ACTIVE_TRANSITION;
+            card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px) scale(1.02)`;
+            card.style.setProperty('--shine-x', `${px * 100}%`);
+            card.style.setProperty('--shine-y', `${py * 100}%`);
+            card.style.setProperty('--shine-opacity', '0.35');
+        }
+        function resetSheen() {
+            card.style.transition = REST_TRANSITION;
+            card.style.transform = '';
+            card.style.setProperty('--shine-opacity', '0');
+        }
+        card.addEventListener('mousemove', setSheen);
+        card.addEventListener('mouseenter', e => setSheen(e));
+        card.addEventListener('mouseleave', resetSheen);
+        card.addEventListener('touchmove', (e) => {
+            const t = e.touches[0];
+            if (t) setSheen(t);
+        }, { passive: true });
+        card.addEventListener('touchend', resetSheen);
     });
 });
 
@@ -195,9 +347,46 @@ function typeWriter(element, text, speed = 100) {
 window.addEventListener('load', () => {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
-        const originalText = heroTitle.innerHTML;
-        // Uncomment the line below to enable typing effect
-        // typeWriter(heroTitle, originalText, 50);
+        // Hero word-by-word reveal
+        const originalHtml = heroTitle.innerHTML;
+        const temp = document.createElement('div');
+        temp.innerHTML = originalHtml;
+        const words = [];
+        temp.childNodes.forEach(node => {
+            if (node.nodeType === Node.TEXT_NODE) {
+                const parts = node.textContent.split(/(\s+)/);
+                parts.forEach(part => {
+                    if (part.length) words.push(part);
+                });
+            } else {
+                words.push(node.outerHTML);
+            }
+        });
+        heroTitle.innerHTML = '';
+        words.forEach((w, i) => {
+            if (/^\s+$/.test(w)) {
+                heroTitle.appendChild(document.createTextNode(w));
+            } else if (w.startsWith('<')) {
+                // Keep existing tags like span.text-gradient intact
+                const holder = document.createElement('span');
+                holder.className = 'hero-word';
+                holder.innerHTML = w;
+                heroTitle.appendChild(holder);
+                setTimeout(() => holder.classList.add('revealed'), 80 * i);
+            } else {
+                const span = document.createElement('span');
+                span.textContent = w;
+                span.className = 'hero-word';
+                heroTitle.appendChild(span);
+                setTimeout(() => span.classList.add('revealed'), 80 * i);
+            }
+        });
+        // Trigger a one-time shimmer on any .text-gradient in title
+        const gradientSpan = heroTitle.querySelector('.text-gradient');
+        if (gradientSpan) {
+            gradientSpan.classList.add('shimmer');
+            setTimeout(() => gradientSpan.classList.remove('shimmer'), 2000);
+        }
     }
 });
 

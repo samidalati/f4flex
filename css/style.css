@@ -14,6 +14,9 @@ body {
     line-height: 1.6;
     color: #ffffff;
     background-color: #0a0a0a;
+    background-image: radial-gradient(1200px 800px at 50% calc(50% + var(--bg-shift-y, 0px)), rgba(244,0,81,0.08), transparent 60%),
+                      radial-gradient(900px 600px at calc(50% + var(--bg-shift-x, 0px)) 20%, rgba(102, 126, 234, 0.07), transparent 60%);
+    background-attachment: fixed;
     overflow-x: hidden;
 }
 
@@ -32,6 +35,18 @@ body {
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all 0.3s ease;
+}
+
+/* Scroll progress bar */
+.navbar::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    height: 3px;
+    width: var(--scroll-progress, 0%);
+    background: linear-gradient(90deg, #f40051, #d40045);
+    box-shadow: 0 0 16px rgba(244, 0, 81, 0.6);
+    transition: width 0.15s linear;
 }
 
 .nav-container {
@@ -145,6 +160,7 @@ body {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .text-gradient {
@@ -152,6 +168,40 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    position: relative;
+}
+
+/* One-time shimmer sweep for hero emphasis */
+.text-gradient.shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.35) 50%, transparent 100%);
+    transform: skewX(-20deg);
+    animation: shimmer-sweep 1.4s ease-out 0.4s 1 forwards;
+}
+
+@keyframes shimmer-sweep {
+    to { left: 110%; }
+}
+
+/* Word-by-word reveal */
+.hero-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(16px) rotateX(20deg);
+    transform-origin: 50% 100%;
+    filter: blur(6px);
+    transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
+}
+
+.hero-word.revealed {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+    filter: blur(0);
 }
 
 .hero-description {
@@ -750,6 +800,8 @@ section.animate-in {
     cursor: pointer;
     opacity: 0;
     transform: translateY(40px) scale(0.9);
+    transform-style: preserve-3d;
+    will-change: transform;
 }
 
 .portfolio-item.animate-in {
@@ -760,6 +812,26 @@ section.animate-in {
 .portfolio-item:hover {
     transform: translateY(-15px) scale(1.02);
     box-shadow: 0 20px 40px rgba(244, 0, 81, 0.15);
+}
+
+/* Sheen highlight controlled via CSS variables */
+.portfolio-item::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    pointer-events: none;
+    background: radial-gradient(
+        circle at var(--shine-x, 50%) var(--shine-y, 50%),
+        rgba(255,255,255,0.25) 0%,
+        rgba(255,255,255,0.12) 12%,
+        rgba(255,255,255,0.05) 24%,
+        transparent 40%
+    );
+    opacity: var(--shine-opacity, 0);
+    transition: opacity 0.25s ease;
 }
 
 .portfolio-image {
@@ -874,6 +946,9 @@ section.animate-in {
 /* Partners Section */
 .partners {
     background: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
 }
 
 .partners-grid {
@@ -885,6 +960,38 @@ section.animate-in {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Remove old pseudo glow blobs */
+.partners::before,
+.partners::after {
+    content: none !important;
+}
+
+/* Mouse-follow spotlight overlay */
+.partners .partners-spotlight {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    filter: blur(24px);
+    background: radial-gradient(
+        circle var(--spot-size, 260px) at var(--spot-x, 50%) var(--spot-y, 50%),
+        rgba(244, 0, 81, 0.55),
+        rgba(244, 0, 81, 0.28) 45%,
+        rgba(244, 0, 81, 0.0) 70%
+    );
+    mix-blend-mode: screen;
+}
+
+/* Ensure content sits above glows */
+.partners > .container,
+.partners-grid,
+.partner-item {
+    position: relative;
+    z-index: 1;
 }
 
 .partner-item {
