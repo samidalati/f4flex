@@ -435,11 +435,11 @@ Every market's content had to maintain global consistency in tone, look, and qua
 
 The Solution
 
-We accepted the challenge of creating regional content that fully met NARS Global's standards without compromising quality or brand integrity. The content remained subject to global approval and could be rejected if it did not meet their expectations.
+Accepting the challenge of creating regional content that fully met NARS Global's standards without compromising quality or brand integrity. The content remained subject to global approval and could be rejected if it did not meet their expectations.
 
-To ensure authenticity and relevance, we collaborated with @Hindash, one of the most prominent beauty influencers and makeup artists in the Middle East. The campaign focused on three key skin tones—light, medium, and dark—to highlight the 33 foundation shades offered by NARS, celebrating the region's rich diversity, especially in Dubai.
+To ensure authenticity and relevance, collaborating with @Hindash, one of the most prominent beauty influencers and makeup artists in the Middle East. The campaign focused on three key skin tones—light, medium, and dark—to highlight the 33 foundation shades offered by NARS, celebrating the region's rich diversity, especially in Dubai.
 
-We mirrored the global visual style closely, using the same music and lighting approach. The creative focused on application techniques, shade selection, product benefits, and makeup results. Smooth transitions and elegant motion reinforced the brand's premium aesthetic, while Hindash served as the face of the campaign to anchor local credibility.
+Mirroring the global visual style closely, using the same music and lighting approach. The creative focused on application techniques, shade selection, product benefits, and makeup results. Smooth transitions and elegant motion reinforced the brand's premium aesthetic, while Hindash served as the face of the campaign to anchor local credibility.
 
 The Execution
 
@@ -468,15 +468,15 @@ The Wella Arabia Instagram page lacked localized content, as the global team did
 
 The Solution
 
-We produced a diverse set of 40 images in a single session for both local and global social media channels. With a modest budget, we managed every stage of production, from creative direction and styling to photography and prop sourcing. We hired a professional photographer and used team members as models to achieve authentic, relatable results.
+Producing a diverse set of 40 images in a single session for both local and global social media channels. With a modest budget, managing every stage of production, from creative direction and styling to photography and prop sourcing. Hiring a professional photographer and using team members as models to achieve authentic, relatable results.
 
 Color By You | Crazy Temporary and Permanent Hair Color
 
-We created styled product content that highlighted the brand's bold color range, mixing possibilities, and temporary top coats. The visuals also included detailed pack shots to showcase the complete color collection.
+Creating styled product content that highlighted the brand's bold color range, mixing possibilities, and temporary top coats. The visuals also included detailed pack shots to showcase the complete color collection.
 
 Wella Permanent Hair Color and Results (Koleston and Soft Color)
 
-To keep the content natural and accessible, we invited team members to model for the shoot. They arrived with their hair styled naturally, helping us create organic, realistic visuals that featured Wella's most loved products while staying true to the brand's identity.`,
+To keep the content natural and accessible, inviting team members to model for the shoot. They arrived with their hair styled naturally, helping create organic, realistic visuals that featured Wella's most loved products while staying true to the brand's identity.`,
             client: 'Wella',
             clientLogo: 'assets/partners/Partenrs_0006_Wella.webp',
             behanceUrl: 'https://www.behance.net/gallery/168175917/Wella-Social-media-content',
@@ -516,7 +516,7 @@ Our challenge was to create a concept that connected authentically with youth wh
 
 The Idea
 
-We developed the concept "The Thrill of Firsts" inspired by the excitement and uniqueness of every first experience. The idea encouraged young people to embrace new adventures while reminding them that the only thing to think about before their next first is protection.
+Developing the concept "The Thrill of Firsts" inspired by the excitement and uniqueness of every first experience. The idea encouraged young people to embrace new adventures while reminding them that the only thing to think about before their next first is protection.
 
 Our message was clear: Durex supports and empowers this unstoppable generation by being there for them, not to restrict them. Every first time can be thrilling, as long as it begins safely.
 
@@ -524,22 +524,22 @@ The creative platform built on the question "What's your #NextFirst?", opening e
 
 The Manifesto
 
-We produced a manifesto film that spoke directly from the point of view of this generation. The tone was natural, relatable, and empowering, reflecting Durex's supportive role. The film closed with our call to action:
+Producing a manifesto film that spoke directly from the point of view of this generation. The tone was natural, relatable, and empowering, reflecting Durex's supportive role. The film closed with the call to action:
 "Dare. Discover. Explore. But first, Durex."
 
-Because of budget limitations, we combined stock footage with scenes we shot during a one-day production to create a raw, authentic energy. Multiple voiceovers, both male and female with diverse accents, made the content inclusive and genuine.
+Because of budget limitations, combining stock footage with scenes shot during a one-day production to create a raw, authentic energy. Multiple voiceovers, both male and female with diverse accents, made the content inclusive and genuine.
 
 Quickies
 
-To expand the campaign, we created short videos called "Quickies." Each one depicted a different first-time scenario, showing the thrill of new experiences while reinforcing the message of protection.
+To expand the campaign, creating short videos called "Quickies." Each one depicted a different first-time scenario, showing the thrill of new experiences while reinforcing the message of protection.
 Examples included:
 • First time in the shower
 • First time in the car
 • First time in the library (a more conservative version for selective markets)
 
-We cast three real couples based on chemistry, authenticity, and natural connection. The goal was to capture moments that felt daring, sexy, yet genuine.
+Casting three real couples based on chemistry, authenticity, and natural connection. The goal was to capture moments that felt daring, sexy, yet genuine.
 
-We also produced rough mockups ourselves, shooting scenes on mobile phones and editing them with movie and music-video clips to visualize the tone and direction for the client.
+Also producing rough mockups, shooting scenes on mobile phones and editing them with movie and music-video clips to visualize the tone and direction for the client.
 
 All final videos used exclusive music inspired by Massive Attack, composed specifically to evoke excitement and sensuality. Each video ended with the animated Durex logo appearing on the condom pack, visually linking the brand to protection and empowerment.
 
@@ -549,20 +549,20 @@ The videos were distributed across social media, inviting the audience to share 
 
 Visuals
 
-We designed simple but provocative visuals that focused on the product, paired with textures and backdrops hinting at potential first-time scenarios. These assets were used in-store and on social media as teasers with the question:
+Designing simple but provocative visuals that focused on the product, paired with textures and backdrops hinting at potential first-time scenarios. These assets were used in-store and on social media as teasers with the question:
 "What's your #NextFirst?"
 All visuals directed users to the campaign website.
 
 Website
 
-We created an interactive landing page for both desktop and mobile, combining education and playfulness. The site featured:
+Creating an interactive landing page for both desktop and mobile, combining education and playfulness. The site featured:
 • The main manifesto video
 • An interactive section where users could share and like ideas for new firsts
 • A collaboration with a popular influencer discussing sexual wellness, confidence, and the importance of being prepared
 
 The result was a digital experience that inspired curiosity, encouraged conversation, and reinforced Durex's message of safety, confidence, and empowerment.`,
             client: 'Durex',
-            clientLogo: 'assets/partners/Partenrs_0000_Bourjois.webp', // Using Bourjois as placeholder since Durex isn't in partners
+            clientLogo: 'assets/partners/Partenrs_0012_Durex.webp',
             behanceUrl: 'https://www.behance.net/gallery/115659431/Durex-The-Thrill-Of-Firsts',
             images: [
                 'assets/Durex-Thrill-Firsts/40b9e4115659431.60551bb285bc9.webp',
@@ -587,14 +587,14 @@ The result was a digital experience that inspired curiosity, encouraged conversa
             title: 'WonderLux Mascara',
             description: `The Challenge
 
-The Rimmel Wonder'Lux Mascara launched alongside six Wonder Proof Liners, yet the global campaign lacked content tailored to regional audiences. Working closely with the Google team, we discovered new audience segments beyond traditional beauty enthusiasts. One of the most promising was video gamers, which inspired us to create a unique concept relevant to this community.
+The Rimmel Wonder'Lux Mascara launched alongside six Wonder Proof Liners, yet the global campaign lacked content tailored to regional audiences. Working closely with the Google team, discovering new audience segments beyond traditional beauty enthusiasts. One of the most promising was video gamers, which inspired creating a unique concept relevant to this community.
 
 
 The Idea
 
-We developed an original campaign concept, independent from the global direction, to test YouTube learnings specific to our regional audience. Our chosen ambassador, Fatma Almomen, a well-known influencer in the Middle East, embodied a modern superhero inspired by strong female characters from video games and films.
+Developing an original campaign concept, independent from the global direction, to test YouTube learnings specific to the regional audience. The chosen ambassador, Fatma Almomen, a well-known influencer in the Middle East, embodied a modern superhero inspired by strong female characters from video games and films.
 
-Out of the six liner shades, we designed three signature makeup looks, each representing a unique "superpower" rooted in Rimmel's message of women empowerment.
+Out of the six liner shades, designing three signature makeup looks, each representing a unique "superpower" rooted in Rimmel's message of women empowerment.
 The powers were named:
 • Say No
 • Live The Moment
@@ -605,9 +605,9 @@ The set design mirrored the mascara's pink metallic packaging, with subtle makeu
 
 The Execution
 
-We launched the campaign with a hero video showcasing the mascara and its key benefits, followed by a reveal of the six liners under the tagline "Choose Your Power." The main video was supported by six-second cut-downs, each dedicated to one superpower and look.
+Launching the campaign with a hero video showcasing the mascara and its key benefits, followed by a reveal of the six liners under the tagline "Choose Your Power." The main video was supported by six-second cut-downs, each dedicated to one superpower and look.
 
-In the second phase, we released content featuring both the mascara and liners together, highlighting all six powers. We optimized assets for different social platforms, adapting the creative into GIFs, stills, stories, videos, and photos to maximize reach and engagement.`,
+In the second phase, releasing content featuring both the mascara and liners together, highlighting all six powers. Optimizing assets for different social platforms, adapting the creative into GIFs, stills, stories, videos, and photos to maximize reach and engagement.`,
             client: 'Rimmel',
             clientLogo: 'assets/partners/Partenrs_0004_Rimmel.webp',
             behanceUrl: 'https://www.behance.net/gallery/91949647/Rimmel-WonderLux-Mascara',
@@ -632,13 +632,13 @@ The Solution
 
 Our big idea was to connect each palette to its Parisian inspiration through a campaign titled "Take Me to Paris." Every look transports the viewer to a different place in Paris, allowing them to experience the city's charm and joyful spirit without ever leaving home.
 
-To bring this concept to life, we reimagined Paris in a playful and metaphorical way. Our regional Bourjois ambassador, Noha Nabil, created three makeup looks—each one taking her to a different Parisian scene while she remained in her own space.
+To bring this concept to life, reimagining Paris in a playful and metaphorical way. The regional Bourjois ambassador, Noha Nabil, created three makeup looks—each one taking her to a different Parisian scene while she remained in her own space.
 
 Each video begins with Noha in her cozy room, flipping through a French magazine. She spots a location that inspires her, and the products appear around her as if by magic, helping her create her new look in a joyful and whimsical way. Once her makeup is complete, a quick transition transforms her surroundings into Paris, complete with a matching outfit and setting. The scene captures the brand's joyful and chic attitude, closing with Noha embodying the true "Joyfully Parisian" spirit.
 
 The Execution
 
-The long-format videos featured detailed tutorials of Noha using each palette, supported by complementary products available in stores. From these, we created a range of shorter cuts and resized assets optimized for different social media platforms.
+The long-format videos featured detailed tutorials of Noha using each palette, supported by complementary products available in stores. From these, creating a range of shorter cuts and resized assets optimized for different social media platforms.
 
 The content followed best practices and platform-specific trends discussed in our ongoing workshops with social media partners. The result was a series of visually engaging videos that brought Paris to life and showcased Bourjois' products through an imaginative, relatable story.`,
             client: 'Bourjois',
@@ -660,22 +660,22 @@ The content followed best practices and platform-specific trends discussed in ou
             title: 'Your Loved Ones',
             description: `The Challenge
 
-To fill a gap in our media plan and promote our core products in Face, Eyes, and Lips, we needed a social campaign featuring three popular influencers from the region. At the same time, the brand was introducing new visual guidelines. Our goal was to create a campaign that smoothly bridged the old and new aesthetics while reflecting the brand's joyful identity, Joyfully Parisian.
+To fill a gap in the media plan and promote core products in Face, Eyes, and Lips, a social campaign featuring three popular influencers from the region was needed. At the same time, the brand was introducing new visual guidelines. The goal was to create a campaign that smoothly bridged the old and new aesthetics while reflecting the brand's joyful identity, Joyfully Parisian.
 
 The main challenge was working with a very limited budget while driving sales without launching a new product, only new shades of existing ones.
 
 The Idea
 
-To maximize reach and engagement, we partnered with three leading influencers, each representing one of our hero products:
+To maximize reach and engagement, partnering with three leading influencers, each representing one of the hero products:
 • Healthy Mix Foundation for Face
 • Twist Up The Volume Mascara for Eyes
 • Rouge Edition Velvet for Lips
 
 Each influencer wore a bright color inspired by her featured product and was filmed against a complementary background to emphasize the campaign's central themes of joy and color.
 
-We titled the campaign "The Loved Ones", symbolizing both the products people love and the influencers who bring them to life. The influencers were encouraged to act naturally to connect with their audiences and express the playful, Parisian spirit of the brand.
+Titling the campaign "The Loved Ones", symbolizing both the products people love and the influencers who bring them to life. The influencers were encouraged to act naturally to connect with their audiences and express the playful, Parisian spirit of the brand.
 
-From the footage, we produced a range of short-form content for different social platforms. Each asset highlighted attitude, makeup results, product benefits, and application tips. The campaign successfully drove engagement and guided viewers to our online store for an easy shopping experience.`,
+From the footage, producing a range of short-form content for different social platforms. Each asset highlighted attitude, makeup results, product benefits, and application tips. The campaign successfully drove engagement and guided viewers to the online store for an easy shopping experience.`,
             client: 'Bourjois',
             clientLogo: 'assets/partners/Partenrs_0000_Bourjois.webp',
             behanceUrl: 'https://www.behance.net/gallery/91952259/Bourjois-Your-Loved-Ones',
